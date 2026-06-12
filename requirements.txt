@@ -1,0 +1,8 @@
+python-dotenv
+requests
+kafka-python
+pandas
+scikit-learn
+neo4j
+elasticsearch
+msal
