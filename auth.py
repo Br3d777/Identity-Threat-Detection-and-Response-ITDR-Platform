@@ -8,7 +8,7 @@ client_id = os.getenv("AZURE_CLIENT_ID")
 tenant_id = os.getenv("AZURE_TENANT_ID")
 client_secret = os.getenv("AZURE_CLIENT_SECRET")
 
-authority = f"https://login.microsoftonline.com/{tenant_id}"
+authority = "https://login.microsoftonline.com/{tenant_id}"
 
 app = msal.confidentialclientApplication(
   client_id,
