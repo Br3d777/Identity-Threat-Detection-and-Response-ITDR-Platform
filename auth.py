@@ -4,18 +4,25 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client_id = os.getenv("AZURE_CLIENT_ID")
-tenant_id = os.getenv("AZURE_TENANT_ID")
-client_secret = os.getenv("AZURE_CLIENT_SECRET")
+CLIENT_ID = os.getenv("CLIENT_ID")
+TENANT_ID = os.getenv("TENANT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
-authority = "https://login.microsoftonline.com/{tenant_id}"
+AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 
-app = msal.confidentialclientApplication(
-  client_id,
-  authority=authority,
-  client_credential=client_secret
+app = msal.ConfidentialClientApplication(
+  client_id=CLIENT_ID,
+  authority=AUTHORITY,
+  client_credential=CLIENT_SECRET
 )
-token = app.acquire_token_for_client(
-  scopes=["httpds://graph.microsoft.com/.default"]
+
+token_response = app.acquire_token_for_client(
+  scopes=["https://graph.microsoft.com/.default"]
 )
-print(token)
+
+if "access_token" in token_response:
+  print("Access token created successfully")
+  print(token_response["access_token"])
+else:
+  print("Token generation failed")
+  print(token_response)
