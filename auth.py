@@ -2,7 +2,7 @@ import os
 import msal
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(".env")
 
 CLIENT_ID = os.getenv("c1ecba2487-45d2-8fba-b9e39d6206fa")
 TENANT_ID = os.getenv("e308630a=26fe-4d4f-9004-2647bd305127")
