@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-TENANT_ID = os.getenv("TENANT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_ID = os.getenv("ce1ccbaa-2487-475d-82fa-b9e39d6206fa")
+TENANT_ID = os.getenv("e308630a=26fe-4d4f-9004-2647bd305127")
+CLIENT_SECRET = os.getenv("5beb035b8807aca6fb15d5854726046eee0260c6")
 
-AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
+AUTHORITY = f"https://login.microsoftonline.com/{e308630a=26fe-4d4f-9004-2647bd305127}"
 
 app = msal.ConfidentialClientApplication(
   client_id=CLIENT_ID,
