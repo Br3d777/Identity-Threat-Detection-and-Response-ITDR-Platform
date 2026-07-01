@@ -1,0 +1,6 @@
+services:
+kafka:
+  image: confluentinc/cp-kafka
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper
